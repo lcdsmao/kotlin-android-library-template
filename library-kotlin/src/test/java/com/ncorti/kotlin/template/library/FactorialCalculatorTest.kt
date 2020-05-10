@@ -13,20 +13,20 @@ import org.junit.Test
  */
 class FactorialCalculatorTest {
 
-    @Test
-    fun computeFactorial_withNegative_raiseException() {
-        assertThrows(Exception::class.java) {
-            computeFactorial(-1)
-        }
+  @Test
+  fun computeFactorial_withNegative_raiseException() {
+    assertThrows(Exception::class.java) {
+      computeFactorial(-1)
     }
+  }
 
-    @Test
-    fun computeFactorial_forZero() {
-        assertEquals(1, computeFactorial(0))
-    }
+  @Test
+  fun computeFactorial_forZero() {
+    assertEquals(1, computeFactorial(0))
+  }
 
-    @Test
-    fun computeFactorial_forFive() {
-        assertEquals(120, computeFactorial(5))
-    }
+  @Test
+  fun computeFactorial_forFive() {
+    assertEquals(120, computeFactorial(5))
+  }
 }
