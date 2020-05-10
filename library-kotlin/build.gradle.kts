@@ -8,9 +8,9 @@ plugins {
 }
 
 dependencies {
-  implementation(kotlin("stdlib-jdk7"))
+  implementation(Kotlin.stdlib.jdk8)
 
-  testImplementation(TestingLib.JUNIT)
+  testImplementation(Testing.junit4)
 }
 
 publishing {

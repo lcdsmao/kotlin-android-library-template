@@ -1,14 +1,6 @@
+import de.fayard.dependencies.bootstrapRefreshVersionsAndDependencies
+
 pluginManagement {
-  resolutionStrategy {
-    eachPlugin {
-      if (requested.id.id == "com.android.library") {
-        useModule("com.android.tools.build:gradle:${requested.version}")
-      }
-      if (requested.id.id == "com.android.application") {
-        useModule("com.android.tools.build:gradle:${requested.version}")
-      }
-    }
-  }
   repositories {
     gradlePluginPortal()
     google()
@@ -16,6 +8,15 @@ pluginManagement {
     jcenter()
   }
 }
+
+apply(from = "plugins.gradle.kts")
+
+buildscript {
+  repositories { gradlePluginPortal() }
+  dependencies.classpath("de.fayard:dependencies:0.5.8")
+}
+
+bootstrapRefreshVersionsAndDependencies()
 
 rootProject.name = ("kotlin-android-template")
 

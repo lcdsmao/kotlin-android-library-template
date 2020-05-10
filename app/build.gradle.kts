@@ -6,18 +6,18 @@ plugins {
 }
 
 dependencies {
-  implementation(kotlin("stdlib-jdk7"))
+  implementation(Kotlin.stdlib.jdk8)
 
   implementation(project(":library-android"))
   implementation(project(":library-kotlin"))
 
-  implementation(SupportLibs.ANDROIDX_APPCOMPAT)
-  implementation(SupportLibs.ANDROIDX_CONSTRAINT_LAYOUT)
-  implementation(SupportLibs.ANDROIDX_CORE_KTX)
+  implementation(AndroidX.appCompat)
+  implementation(AndroidX.constraintLayout)
+  implementation(AndroidX.coreKtx)
 
-  testImplementation(TestingLib.JUNIT)
+  testImplementation(Testing.junit4)
 
-  androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_EXT_JUNIT)
-  androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_RULES)
-  androidTestImplementation(AndroidTestingLib.ESPRESSO_CORE)
+  androidTestImplementation(AndroidX.test.ext.junitKtx)
+  androidTestImplementation(AndroidX.test.rules)
+  androidTestImplementation(AndroidX.test.espresso.core)
 }

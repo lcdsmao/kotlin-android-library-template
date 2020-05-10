@@ -1,9 +1,9 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
-  id("io.gitlab.arturbosch.detekt") version BuildPluginsVersion.DETEKT
-  id("org.jlleitschuh.gradle.ktlint") version BuildPluginsVersion.KTLINT
-  id("com.github.ben-manes.versions") version BuildPluginsVersion.VERSIONS_PLUGIN
+  id("io.gitlab.arturbosch.detekt")
+  id("org.jlleitschuh.gradle.ktlint")
+  id("com.github.ben-manes.versions")
 }
 
 allprojects {
@@ -23,7 +23,7 @@ subprojects {
 
   ktlint {
     debug.set(false)
-    version.set(Versions.KTLINT)
+    version.set("0.36.0")
     verbose.set(true)
     android.set(false)
     outputToConsole.set(true)

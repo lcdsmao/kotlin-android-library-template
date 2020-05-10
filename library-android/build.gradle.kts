@@ -9,15 +9,14 @@ plugins {
 }
 
 dependencies {
-  implementation(kotlin("stdlib-jdk7"))
+  implementation(Kotlin.stdlib.jdk8)
+  implementation(AndroidX.appCompat)
+  implementation(AndroidX.coreKtx)
 
-  implementation(SupportLibs.ANDROIDX_APPCOMPAT)
-  implementation(SupportLibs.ANDROIDX_CORE_KTX)
+  testImplementation(Testing.junit4)
 
-  testImplementation(TestingLib.JUNIT)
-
-  androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_RUNNER)
-  androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_EXT_JUNIT)
+  androidTestImplementation(AndroidX.test.runner)
+  androidTestImplementation(AndroidX.test.ext.junit)
 }
 
 afterEvaluate {
