@@ -1,4 +1,4 @@
-# kotlin-android-template 🤖
+# kotlin-android-library-template 🤖
 
 ![Android CI](https://github.com/lcdsmao/kotlin-android-template/workflows/Android%20CI/badge.svg)  ![License](https://img.shields.io/github/license/cortinico/kotlin-android-template.svg) ![Language](https://img.shields.io/github/languages/top/cortinico/kotlin-android-template?color=blue&logo=kotlin)
 
@@ -10,10 +10,10 @@ Forked from [cortinico/kotlin-android-template](https://github.com/cortinico/kot
 
 - **100% Kotlin-only template**.
 - 3 Sample modules (Android app, Android library, Kotlin library).
-- Sample Espresso, Instrumentation & JUnit tests.
 - 100% Gradle Kotlin DSL setup.
-- Dependency versions managed via `buildSrc`.
+- Dependency versions managed via `versions.properties`.
 - CI Setup with GitHub Actions.
+- Deploy website and docs.
 - Kotlin Static Analysis via `ktlint`, `spotless`, and `detekt`.
 - Publishing Ready.
 - Issues Template (bug report + feature request)
@@ -23,7 +23,7 @@ Forked from [cortinico/kotlin-android-template](https://github.com/cortinico/kot
 
 This template is using [**Gradle Kotlin DSL**](https://docs.gradle.org/current/userguide/kotlin_dsl.html) as well as the [Plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block) to setup the build.
 
-Dependencies are centralized inside the [versions.properties](bersions.properties) managed by [RefreshVersions](https://github.com/jmfayard/refreshVersions).
+Dependencies are centralized inside the [versions.properties](versions.properties) managed by [RefreshVersions](https://github.com/jmfayard/refreshVersions).
 
 ## Static Analysis 🔍
 
@@ -34,6 +34,10 @@ This template is also using [**detekt**](https://github.com/arturbosch/detekt) t
 ## CI ⚙️
 
 This template is using [**GitHub Actions**](https://github.com/lcdsmao/kotlin-android-template/actions) as CI.
+
+## Docs
+
+This template deploy the website to the Github Pages via [**Material for MkDocs**](https://github.com/squidfunk/mkdocs-material) and [Dokka](https://github.com/Kotlin/dokka).
 
 ## Publishing 🚀
 
