@@ -9,6 +9,4 @@ plugins {
 
 dependencies {
   implementation(Kotlin.stdlib.jdk8)
-
-  testImplementation(Testing.junit4)
 }
