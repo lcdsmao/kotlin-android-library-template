@@ -19,7 +19,7 @@ bootstrapRefreshVersions()
 rootProject.name = "kotlin-android-template"
 
 include(
-  "app",
+  "sample",
   "library-android",
   "library-kotlin"
 )
