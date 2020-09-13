@@ -13,5 +13,5 @@ val kotlinVersion = extra["version.kotlin"]
 
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-  implementation("com.android.tools.build:gradle:4.1.0-alpha09")
+  implementation("com.android.tools.build:gradle:4.2.0-alpha10")
 }
