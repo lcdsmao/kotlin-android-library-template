@@ -11,10 +11,12 @@ dependencies {
   implementation(GradlePlugin.kotlin)
   implementation(GradlePlugin.android)
   implementation(GradlePlugin.bintray)
+  implementation(GradlePlugin.artifactory)
 }
 
 object GradlePlugin {
   const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:_"
   const val android = "com.android.tools.build:gradle:_"
   const val bintray = "com.jfrog.bintray.gradle:gradle-bintray-plugin:_"
+  const val artifactory = "org.jfrog.buildinfo:build-info-extractor-gradle:_"
 }
