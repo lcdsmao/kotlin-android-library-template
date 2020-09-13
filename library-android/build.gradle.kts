@@ -11,7 +11,7 @@ plugins {
 dependencies {
   implementation(Kotlin.stdlib.jdk8)
   implementation(AndroidX.appCompat)
-  implementation(AndroidX.coreKtx)
+  implementation(AndroidX.core.ktx)
 
   testImplementation(Testing.junit4)
 

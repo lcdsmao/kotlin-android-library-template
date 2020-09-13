@@ -2,16 +2,17 @@ plugins {
   `kotlin-dsl`
 }
 
-apply(from = "versions.gradle.kts")
-
 repositories {
   jcenter()
   google()
 }
 
-val kotlinVersion = extra["version.kotlin"]
-
 dependencies {
-  implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-  implementation("com.android.tools.build:gradle:4.2.0-alpha10")
+  implementation(GradlePlugin.kotlin)
+  implementation(GradlePlugin.android)
+}
+
+object GradlePlugin {
+  const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:_"
+  const val android = "com.android.tools.build:gradle:_"
 }

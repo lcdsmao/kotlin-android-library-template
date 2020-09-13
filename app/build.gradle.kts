@@ -13,7 +13,7 @@ dependencies {
 
   implementation(AndroidX.appCompat)
   implementation(AndroidX.constraintLayout)
-  implementation(AndroidX.coreKtx)
+  implementation(AndroidX.core.ktx)
 
   testImplementation(Testing.junit4)
 

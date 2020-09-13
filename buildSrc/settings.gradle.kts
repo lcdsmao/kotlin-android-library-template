@@ -1,4 +1,4 @@
-import de.fayard.refreshVersions.bootstrapRefreshVersions
+import de.fayard.refreshVersions.bootstrapRefreshVersionsForBuildSrc
 
 pluginManagement {
   repositories {
@@ -14,12 +14,4 @@ buildscript {
   dependencies.classpath("de.fayard.refreshVersions:refreshVersions:0.9.5")
 }
 
-bootstrapRefreshVersions()
-
-rootProject.name = "kotlin-android-template"
-
-include(
-  "app",
-  "library-android",
-  "library-kotlin"
-)
+bootstrapRefreshVersionsForBuildSrc()
