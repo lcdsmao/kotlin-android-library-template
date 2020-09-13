@@ -42,9 +42,6 @@ fun TestedExtension.androidCommonConfig(startParameter: StartParameter) {
     }
     targetSdkVersion(AndroidSdk.targetSdk)
 
-    versionCode = Coordinates.VERSION_CODE
-    versionName = Coordinates.VERSION_NAME
-
     compileOptions {
       sourceCompatibility = JavaVersion.VERSION_1_8
       targetCompatibility = JavaVersion.VERSION_1_8
@@ -76,6 +73,8 @@ fun TestedExtension.androidCommonConfig(startParameter: StartParameter) {
 fun BaseAppModuleExtension.androidAppConfig() {
   defaultConfig {
     applicationId = AppCoordinates.APP_ID
+    versionCode = AppCoordinates.VERSION_CODE
+    versionName = AppCoordinates.VERSION_NAME
   }
 }
 
