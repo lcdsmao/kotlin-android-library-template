@@ -4,8 +4,8 @@ plugins {
   id("io.gitlab.arturbosch.detekt")
   id("com.github.ben-manes.versions")
   id("com.diffplug.spotless")
+  id("org.jetbrains.dokka")
   id("com.vanniktech.maven.publish") apply false
-  id("org.jetbrains.dokka") apply false
 }
 
 allprojects {
@@ -45,6 +45,11 @@ subprojects {
       )
     }
   }
+}
+
+tasks.dokkaHtmlMultiModule.configure {
+  outputDirectory.set(rootDir.resolve("docs/api"))
+  documentationFileName.set("README.md")
 }
 
 tasks.withType<DependencyUpdatesTask> {
