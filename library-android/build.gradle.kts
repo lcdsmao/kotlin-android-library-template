@@ -1,11 +1,9 @@
-version = Coordinates.VERSION_NAME
-
 plugins {
   `module-config`
   id("com.android.library")
   kotlin("android")
-  id("kotlin-android-extensions")
-  id("maven-publish")
+  id("com.vanniktech.maven.publish")
+  `bintray-publish-config`
 }
 
 dependencies {
@@ -17,14 +15,4 @@ dependencies {
 
   androidTestImplementation(AndroidX.test.runner)
   androidTestImplementation(AndroidX.test.ext.junit)
-}
-
-afterEvaluate {
-  publishing {
-    publications {
-      create<MavenPublication>("release") {
-        from(components["release"])
-      }
-    }
-  }
 }
