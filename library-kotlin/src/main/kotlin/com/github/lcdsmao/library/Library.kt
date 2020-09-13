@@ -1,3 +1,3 @@
 package com.github.lcdsmao.library
 
-// TODO
+fun kotlinLibrary(): Unit = TODO()
