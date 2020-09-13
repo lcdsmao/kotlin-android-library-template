@@ -2,8 +2,8 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
   id("io.gitlab.arturbosch.detekt")
-  id("org.jlleitschuh.gradle.ktlint")
   id("com.github.ben-manes.versions")
+  id("com.diffplug.spotless")
   id("com.vanniktech.maven.publish") apply false
   id("org.jetbrains.dokka") apply false
 }
@@ -19,21 +19,7 @@ allprojects {
 subprojects {
   apply {
     plugin("io.gitlab.arturbosch.detekt")
-    plugin("org.jlleitschuh.gradle.ktlint")
-  }
-
-  ktlint {
-    debug.set(false)
-    version.set("0.36.0")
-    verbose.set(true)
-    android.set(false)
-    outputToConsole.set(true)
-    ignoreFailures.set(false)
-    enableExperimentalRules.set(true)
-    filter {
-      exclude("**/generated/**")
-      include("**/kotlin/**")
-    }
+    plugin("com.diffplug.spotless")
   }
 
   detekt {
@@ -45,10 +31,20 @@ subprojects {
       }
     }
   }
-}
 
-tasks.register("clean", Delete::class.java) {
-  delete(rootProject.buildDir)
+  spotless {
+    kotlin {
+      target("**/*.kt")
+      targetExclude("$buildDir/**/*.kt", "bin/**/*.kt")
+
+      ktlint("0.38.1").userData(
+        mapOf(
+          "indent_size" to "2",
+          "continuation_indent_size" to "2"
+        )
+      )
+    }
+  }
 }
 
 tasks.withType<DependencyUpdatesTask> {
