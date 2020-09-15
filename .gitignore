@@ -51,6 +51,7 @@ captures/
 .idea/misc.xml
 .idea/jarRepositories.xml
 .idea/kotlinScripting.xml
+.idea/$CACHE_FILE$
 # Android Studio 3 in .gitignore file.
 .idea/caches
 .idea/modules.xml
