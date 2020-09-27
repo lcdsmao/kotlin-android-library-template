@@ -1,8 +1,7 @@
 plugins {
   `module-config`
-  id("java-library")
-  kotlin("jvm")
-  id("maven-publish")
+  `java-library`
+  kotlin
   id("com.vanniktech.maven.publish")
   `bintray-publish-config`
 }
