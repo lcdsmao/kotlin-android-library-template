@@ -49,7 +49,6 @@ subprojects {
 
 tasks.dokkaHtmlMultiModule.configure {
   outputDirectory.set(rootDir.resolve("docs/api"))
-  documentationFileName.set("README.md")
 }
 
 tasks.withType<DependencyUpdatesTask> {
