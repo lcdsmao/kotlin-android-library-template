@@ -11,12 +11,12 @@ bintray {
   setPublications("maven")
 
   pkg(closureOf<BintrayExtension.PackageConfig> {
-    repo = "maven"
-    userOrg = "user-org" // TODO modify this
+    repo = extra["BINTRAY_REPO"].toString()
+    userOrg = extra["BINTRAY_USER_ORG"].toString()
     name = extra["POM_ARTIFACT_ID"].toString()
     vcsUrl = extra["POM_SCM_URL"].toString()
     websiteUrl = extra["POM_URL"].toString()
-    setLicenses("Apache-2.0")
+    setLicenses(extra["BINTRAY_LICENSE"].toString())
     version(closureOf<BintrayExtension.VersionConfig> {
       name = project.version.toString()
       released = Date().toString()
