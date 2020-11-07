@@ -1,6 +1,6 @@
 # kotlin-android-library-template 🤖
 
-![Android CI](https://github.com/lcdsmao/kotlin-android-template/workflows/Android%20CI/badge.svg)  ![License](https://img.shields.io/github/license/cortinico/kotlin-android-template.svg) ![Language](https://img.shields.io/github/languages/top/cortinico/kotlin-android-template?color=blue&logo=kotlin)
+![Android CI](https://github.com/lcdsmao/kotlin-android-template/workflows/Android%20CI/badge.svg) ![License](https://img.shields.io/github/license/cortinico/kotlin-android-template.svg) ![Language](https://img.shields.io/github/languages/top/cortinico/kotlin-android-template?color=blue&logo=kotlin)
 
 A simple Github template that lets you create an **Android/Kotlin** library.
 
@@ -14,7 +14,7 @@ Forked from [cortinico/kotlin-android-template](https://github.com/cortinico/kot
 - Dependency versions managed via `versions.properties`.
 - CI Setup with GitHub Actions.
 - Deploy website and docs.
-- Kotlin Static Analysis via `ktlint`, `spotless`, and `detekt`.
+- Kotlin Static Analysis via `detekt`.
 - Publishing Ready.
 - Issues Template (bug report + feature request)
 - Pull Request Template.
@@ -25,11 +25,13 @@ This template is using [Gradle Kotlin DSL](https://docs.gradle.org/current/userg
 
 Dependencies are centralized inside the [versions.properties](versions.properties) managed by [RefreshVersions](https://github.com/jmfayard/refreshVersions).
 
+To check the newest version of dependencies you can run `./gradlew refreshVersions`.
+
 ## Static Analysis
 
-This template is using [ktlint](https://github.com/pinterest/ktlint) with the [spotless](https://github.com/diffplug/spotless) plugin to format your code. To reformat all the source code as well as the buildscript you can run the `spotlessApply` gradle task.
+This template is using [detekt](https://github.com/arturbosch/detekt) to analyze the source code, with the configuration that is stored in the [detekt.yml](config/detekt/detekt.yml) file.
 
-This template is also using [detekt](https://github.com/arturbosch/detekt) to analyze the source code, with the configuration that is stored in the [detekt.yml](config/detekt/detekt.yml) file (the file has been generated with the `detektGenerateConfig` task).
+To reformat all the source code as well as the buildscript you can run `./gradlew detektFormat`.
 
 ## CI
 
