@@ -1,1 +1,1 @@
-public fun kotlinLibrary(): Unit = TODO()
+public val kotlinLibrary: String get() = "kotlinLibrary"

@@ -1,1 +1,1 @@
-fun androidLibrary(): Unit = TODO()
+val androidLibrary get() = "androidLibrary"
