@@ -12,6 +12,7 @@ dependencies {
   implementation(GradlePlugin.android)
   implementation(GradlePlugin.bintray)
   implementation(GradlePlugin.artifactory)
+  implementation(GradlePlugin.detekt)
 }
 
 object GradlePlugin {
@@ -19,4 +20,5 @@ object GradlePlugin {
   const val android = "com.android.tools.build:gradle:_"
   const val bintray = "com.jfrog.bintray.gradle:gradle-bintray-plugin:_"
   const val artifactory = "org.jfrog.buildinfo:build-info-extractor-gradle:_"
+  const val detekt = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:_"
 }
