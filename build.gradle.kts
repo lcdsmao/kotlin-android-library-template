@@ -37,7 +37,7 @@ subprojects {
       target("**/*.kt")
       targetExclude("$buildDir/**/*.kt", "bin/**/*.kt")
 
-      ktlint("0.38.1").userData(
+      ktlint("0.9.0").userData(
         mapOf(
           "indent_size" to "2",
           "continuation_indent_size" to "2"
