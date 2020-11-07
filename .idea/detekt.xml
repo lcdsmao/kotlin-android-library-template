@@ -3,6 +3,7 @@
   <component name="DetektProjectConfiguration">
     <enableDetekt>true</enableDetekt>
     <enableFormatting>true</enableFormatting>
+    <buildUponDefaultConfig>true</buildUponDefaultConfig>
     <rulesPath>config/detekt/detekt.yml</rulesPath>
   </component>
 </project>
