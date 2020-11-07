@@ -6,6 +6,7 @@ import com.android.build.gradle.LibraryPlugin
 import com.android.build.gradle.TestedExtension
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 project.afterEvaluate {
@@ -85,6 +86,11 @@ fun LibraryExtension.androidLibraryConfig() {
 }
 
 fun Project.commonConfig() {
+
+  extensions.findByType<KotlinProjectExtension>()?.apply {
+    // FIXME: Android not supported yet https://youtrack.jetbrains.com/issue/KT-37652
+    explicitApi()
+  }
 
   tasks.withType<JavaCompile>().configureEach {
     sourceCompatibility = JavaVersion.VERSION_1_8.toString()
