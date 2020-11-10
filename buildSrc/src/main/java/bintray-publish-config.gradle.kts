@@ -1,14 +1,15 @@
 import com.jfrog.bintray.gradle.BintrayExtension
+import com.jfrog.bintray.gradle.tasks.BintrayUploadTask
 import java.util.Date
 
 plugins {
   id("com.jfrog.bintray")
+  `maven-publish`
 }
 
 bintray {
   user = System.getProperty("bintrayUser")
   key = System.getProperty("bintrayKey")
-  setPublications("maven")
 
   pkg(closureOf<BintrayExtension.PackageConfig> {
     repo = extra["BINTRAY_REPO"].toString()
@@ -25,10 +26,10 @@ bintray {
 }
 
 project.afterEvaluate {
-  tasks.named("publishMavenPublicationToMavenLocal") {
-    // Let bintray publication depend on artifact tasks created by 'com.vanniktech.maven.publish'
-    tasks.getByName("publishMavenPublicationToLocalRepository").dependsOn.forEach {
-      dependsOn(it)
+  tasks.withType<BintrayUploadTask> {
+    publishing.publications.forEach {
+      val publishTaskName = "publish${it.name.capitalize()}PublicationToLocalRepository"
+      dependsOn(publishTaskName)
     }
   }
 }
