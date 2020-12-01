@@ -10,6 +10,7 @@ plugins {
 bintray {
   user = System.getProperty("bintrayUser")
   key = System.getProperty("bintrayKey")
+  setPublications("maven")
 
   pkg(closureOf<BintrayExtension.PackageConfig> {
     repo = extra["BINTRAY_REPO"].toString()
